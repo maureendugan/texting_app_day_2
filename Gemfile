@@ -8,6 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'devise'
+gem 'rest-client'
 
 group :doc do
   gem 'sdoc', require: false
@@ -17,6 +18,8 @@ group :test do
   gem 'factory_girl'
   gem 'capybara'
   gem 'shoulda-matchers'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
@@ -27,6 +30,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'dotenv-rails'
 end
 
 

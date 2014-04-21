@@ -1,1 +1,30 @@
 <h1><%= @user.email %></h1>
+
+<h3>Send a message</h3>
+
+<%= form_for @message do |f| %>
+  <%= f.label :from %>
+  <%= f.text_field :from %>
+
+  <%= f.label :to %>
+  <%= f.text_field :to %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.submit %>
+<% end %>
+
+<h3>Create a Contact</h3>
+
+<%= form_for @contact do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :phone_number %>
+  <%= f.text_field :phone_number %>
+
+  <%= f.hidden_field(:user_id, :value => "#{current_user.id}") %>
+
+  <%= f.submit %>
+<% end %>
