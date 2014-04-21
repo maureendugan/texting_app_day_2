@@ -13,8 +13,13 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.create(strong)
-    redirect_to contacts_path
+    @contact = Contact.new(strong)
+    if @contact.save
+      flash[:notice] = 'Contact saved.'
+      redirect_to contacts_path
+    else
+      render 'new'
+    end
   end
 
   def edit
@@ -22,7 +27,13 @@ class ContactsController < ApplicationController
   end
 
   def update
-
+    @contact = Contact.find(params[:id])
+    if @contact.update(strong)
+      flash[:notice] = 'Contact updated.'
+      redirect_to contacts_path
+    else
+      render 'edit'
+    end
   end
 
   def destroy
