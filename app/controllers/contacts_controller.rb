@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(strong)
     if @contact.save
       flash[:notice] = 'Contact saved.'
-      redirect_to contacts_path
+      redirect_to user_path(current_user)
     else
       render 'new'
     end
