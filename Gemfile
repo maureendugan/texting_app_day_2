@@ -15,12 +15,11 @@ group :doc do
 end
 
 group :test do
-  gem 'factory_girl'
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'vcr'
   gem 'webmock'
-  gem 'faker'
+
 end
 
 group :development do
@@ -32,6 +31,8 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'dotenv-rails'
+  gem 'factory_girl_rails'
+  gem 'faker'
 end
 
 
