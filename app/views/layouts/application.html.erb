@@ -18,6 +18,9 @@
     <%= link_to "Login", new_user_session_path %>
   <% end %>
 
+  <p id="error"><%= flash[:error] %></p>
+  <p id="notice"><%= flash[:notice] %></p>
+
 <%= yield %>
 
 </body>

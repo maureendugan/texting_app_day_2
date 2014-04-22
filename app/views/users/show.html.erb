@@ -1,10 +1,11 @@
 <h1><%= @user.email %></h1>
+<h3><%= @user.phone_number %></h3>
 
 <h3>Send a message</h3>
+<%= render '/layouts/errors', object: @message %>
 
 <%= form_for @message do |f| %>
-  <%= f.label :from %>
-  <%= f.text_field :from %>
+  <%= f.hidden_field(:from, :value => "#{current_user.phone_number}") %>
 
   <%= f.label :to %>
   <%= f.collection_select :to , @user.contacts.order(:name), :phone_number, :name, include_blank: true %>

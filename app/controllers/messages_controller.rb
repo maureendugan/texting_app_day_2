@@ -9,8 +9,12 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.create(strong)
-    redirect_to user_path(current_user)
+    @message = Message.new(strong)
+    if @message.save
+      redirect_to user_path(current_user), :flash => { :notice => "Success" }
+    else
+      redirect_to user_path(current_user), :flash => { :error => @message.errors.messages[:base].first }
+    end
   end
 
   def show
