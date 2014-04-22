@@ -8,8 +8,7 @@
   <%= f.hidden_field(:from, :value => "#{current_user.phone_number}") %>
 
   <%= f.label :to %>
-  <%= f.collection_select :to , @user.contacts.order(:name), :phone_number, :name, include_blank: true %>
-
+  <%= f.collection_select :to , @user.contacts.order(:name), :phone_number, :name, {}, {include_blank: true, multiple: true, size: 5} %>
 
   <%= f.label :body %>
   <%= f.text_field :body %>

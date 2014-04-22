@@ -9,11 +9,24 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(strong)
-    if @message.save
+    array_to = params[:message][:to].select { |to| to != "" }
+    count = 0
+    errors = []
+    array_to.each do |to|
+      new_message = Message.new(strong)
+      new_message[:to] = to
+      if new_message.save
+        count += 1
+      else
+        errors << new_message.errors.first
+      end
+    end
+    if array_to.length == count && count != 0
       redirect_to user_path(current_user), :flash => { :notice => "Success" }
+    elsif array_to.length == 0
+      redirect_to user_path(current_user), :flash => { :error => "Please select a contact" }
     else
-      redirect_to user_path(current_user), :flash => { :error => @message.errors.messages[:base].first }
+      redirect_to user_path(current_user), :flash => { :error => errors.first }
     end
   end
 

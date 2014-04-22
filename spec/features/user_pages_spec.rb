@@ -20,15 +20,17 @@ describe User, vcr: true do
     visit user_path(user)
     fill_in :message_body, with: "This is a capybara test"
     click_button "Create Message"
-    page.should have_content "A 'To' phone number is required."
+    page.should have_content "Please select a contact"
   end
 
-  it 'should display a confirmation for a successful message sent' do
+  it 'should display a success message if all messages are sent correctly' do
     user = FactoryGirl.create(:user)
     sign_in(user)
-    contact = Contact.create({name: "Josh", phone_number: "5035046871", user_id: user.id})
+    contact = Contact.create({name: "Josh", phone_number: "5035046871", user_id: user.id })
+    contact2 = Contact.create({name: "Moe", phone_number: "6072620716", user_id: user.id })
     visit user_path(user)
-    select(contact.name, from: :message_to)
+    select contact.name, from: :message_to
+    select contact2.name, from: :message_to
     fill_in :message_body, with: "This is a capybara test"
     click_button "Create Message"
     page.should have_content "Success"
