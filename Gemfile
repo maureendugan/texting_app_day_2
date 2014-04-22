@@ -20,6 +20,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'vcr'
   gem 'webmock'
+  gem 'faker'
 end
 
 group :development do
