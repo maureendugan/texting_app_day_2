@@ -24,7 +24,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Tue, 22 Apr 2014 21:05:09 GMT
+      - Tue, 22 Apr 2014 23:57:59 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -37,17 +37,17 @@ http_interactions:
       - none
     body:
       encoding: UTF-8
-      string: "{\"sid\": \"SMabf2ea19a626452ea64d6501fd11adbd\", \"date_created\":
-        \"Tue, 22 Apr 2014 21:05:09 +0000\", \"date_updated\": \"Tue, 22 Apr 2014
-        21:05:09 +0000\", \"date_sent\": null, \"account_sid\": \"<twilio account
+      string: "{\"sid\": \"SMe2ab2eef48cb42c1a5eb8db422cf8ac4\", \"date_created\":
+        \"Tue, 22 Apr 2014 23:57:59 +0000\", \"date_updated\": \"Tue, 22 Apr 2014
+        23:57:59 +0000\", \"date_sent\": null, \"account_sid\": \"<twilio account
         sid>\", \"to\": \"+15035046871\", \"from\": \"+19718017923\", \"body\": \"This
         is a capybara test\", \"status\": \"queued\", \"num_segments\": \"1\", \"num_media\":
         \"0\", \"direction\": \"outbound-api\", \"api_version\": \"2010-04-01\", \"price\":
         null, \"price_unit\": \"USD\", \"uri\": \"/2010-04-01/Accounts/<twilio account
-        sid>/Messages/SMabf2ea19a626452ea64d6501fd11adbd.json\", \"subresource_uris\":
-        {\"media\": \"/2010-04-01/Accounts/<twilio account sid>/Messages/SMabf2ea19a626452ea64d6501fd11adbd/Media.json\"}}"
+        sid>/Messages/SMe2ab2eef48cb42c1a5eb8db422cf8ac4.json\", \"subresource_uris\":
+        {\"media\": \"/2010-04-01/Accounts/<twilio account sid>/Messages/SMe2ab2eef48cb42c1a5eb8db422cf8ac4/Media.json\"}}"
     http_version: 
-  recorded_at: Tue, 22 Apr 2014 21:05:08 GMT
+  recorded_at: Tue, 22 Apr 2014 23:57:59 GMT
 - request:
     method: post
     uri: https://<twilio account sid>:<twilio auth token>@api.twilio.com/2010-04-01/Accounts/<twilio
@@ -72,7 +72,7 @@ http_interactions:
       message: CREATED
     headers:
       Date:
-      - Tue, 22 Apr 2014 21:05:09 GMT
+      - Tue, 22 Apr 2014 23:58:00 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -85,15 +85,15 @@ http_interactions:
       - none
     body:
       encoding: UTF-8
-      string: "{\"sid\": \"SMd8932ff7f4e847789b2b866af4e5efab\", \"date_created\":
-        \"Tue, 22 Apr 2014 21:05:09 +0000\", \"date_updated\": \"Tue, 22 Apr 2014
-        21:05:09 +0000\", \"date_sent\": null, \"account_sid\": \"<twilio account
+      string: "{\"sid\": \"SM18ae03af62a7452cb98ee0b7dc5bff5c\", \"date_created\":
+        \"Tue, 22 Apr 2014 23:58:00 +0000\", \"date_updated\": \"Tue, 22 Apr 2014
+        23:58:00 +0000\", \"date_sent\": null, \"account_sid\": \"<twilio account
         sid>\", \"to\": \"+16072620716\", \"from\": \"+19718017923\", \"body\": \"This
         is a capybara test\", \"status\": \"queued\", \"num_segments\": \"1\", \"num_media\":
         \"0\", \"direction\": \"outbound-api\", \"api_version\": \"2010-04-01\", \"price\":
         null, \"price_unit\": \"USD\", \"uri\": \"/2010-04-01/Accounts/<twilio account
-        sid>/Messages/SMd8932ff7f4e847789b2b866af4e5efab.json\", \"subresource_uris\":
-        {\"media\": \"/2010-04-01/Accounts/<twilio account sid>/Messages/SMd8932ff7f4e847789b2b866af4e5efab/Media.json\"}}"
+        sid>/Messages/SM18ae03af62a7452cb98ee0b7dc5bff5c.json\", \"subresource_uris\":
+        {\"media\": \"/2010-04-01/Accounts/<twilio account sid>/Messages/SM18ae03af62a7452cb98ee0b7dc5bff5c/Media.json\"}}"
     http_version: 
-  recorded_at: Tue, 22 Apr 2014 21:05:09 GMT
+  recorded_at: Tue, 22 Apr 2014 23:57:59 GMT
 recorded_with: VCR 2.9.0
