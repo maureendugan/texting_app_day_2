@@ -1,5 +1,6 @@
 require 'active_model'
 require 'rest_client'
+require 'json'
 
 class Message
   include ActiveModel::Model
@@ -20,12 +21,10 @@ class Message
         From: from
       }
     ).execute
+  rescue RestClient::BadRequest => error
+    message = JSON.parse(error.response)['message']
+    errors.add :base, message
+    false
   end
 end
-
-# rescue RestClient::BadRequest => error
-#   message = JSON.parse(error.response)['message']
-#   errors.add(:base, message)
-#   false
-# end
 
