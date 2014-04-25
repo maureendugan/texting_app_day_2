@@ -13,10 +13,8 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.new(strong)
-    if @contact.save
-      flash[:notice] = 'Contact saved.'
-      redirect_to user_path(current_user)
+    if current_user.contacts.create(contact_params)
+      redirect_to user_path(current_user), notice: 'Contact saved.'
     else
       render 'new'
     end
@@ -28,9 +26,8 @@ class ContactsController < ApplicationController
 
   def update
     @contact = Contact.find(params[:id])
-    if @contact.update(strong)
-      flash[:notice] = 'Contact updated.'
-      redirect_to contacts_path
+    if @contact.update(contact_params)
+      redirect_to contacts_path, notice: 'Contact updated.'
     else
       render 'edit'
     end
@@ -40,10 +37,9 @@ class ContactsController < ApplicationController
 
   end
 
-
   private
 
-  def strong
-    params.require(:contact).permit(:name, :phone_number, :user_id)
+  def contact_params
+    params.require(:contact).permit(:name, :phone_number)
   end
 end

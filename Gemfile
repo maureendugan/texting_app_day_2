@@ -10,16 +10,11 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'rest-client'
 
-group :doc do
-  gem 'sdoc', require: false
-end
-
 group :test do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'vcr'
   gem 'webmock'
-
 end
 
 group :development do
@@ -35,6 +30,4 @@ group :development, :test do
   gem 'faker'
   gem 'pry'
 end
-
-
 
